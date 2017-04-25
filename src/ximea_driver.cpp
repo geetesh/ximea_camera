@@ -212,6 +212,14 @@ void ximea_driver::setROI(int l, int t, int w, int h)
   std::cout << rect_height_ << " " << rect_width_ << " " << rect_left_ << " " << rect_top_ << std::endl;
 
   int tmp;
+
+//  xiSetParamInt(handle, XI_PRM_DOWNSAMPLING, downsampling_rate);
+  stat = xiSetParamInt(xiH_, XI_PRM_DOWNSAMPLING, downsample_factor_);
+  errorHandling(stat, "xiSetParamInt (downsample)");
+//  xiGetParamInt(xiH_, XI_PRM_DOWNSAMPLING XI_PRM_INFO_INCREMENT, &tmp);
+//  std::cout << "width increment " << tmp << std::endl;
+
+
   stat = xiSetParamInt(xiH_, XI_PRM_WIDTH, rect_width_);
   errorHandling(stat, "xiSetParamInt (aoi width)");
   xiGetParamInt(xiH_, XI_PRM_WIDTH XI_PRM_INFO_INCREMENT, &tmp);

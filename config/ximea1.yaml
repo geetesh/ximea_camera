@@ -6,4 +6,10 @@ rect_left: 160
 rect_top: 128
 rect_height: 256
 rect_width: 320
+#rect_left: 0
+#rect_top: 0
+#rect_height: 128
+#rect_width: 160
 image_data_format: "XI_MONO8"
+binning_enabled: "true"
+downsample_factor_: 2
