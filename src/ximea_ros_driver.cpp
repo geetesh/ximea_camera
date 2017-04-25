@@ -66,6 +66,7 @@ void ximea_ros_driver::publishCamInfo(const ros::Time &now)
 {
   ros_image_.header.stamp = now;
   cam_info_ = cam_info_manager_->getCameraInfo();
+  cam_info_.header.stamp = now;
   cam_info_pub_.publish(cam_info_);
 }
 
